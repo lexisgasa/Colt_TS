@@ -41,3 +41,32 @@ function rando (num:number):number | string {
 
 // funciona en arrow functions igual
 const add = (x: number, y: number): number => x + y;
+
+// el tipo void se usa solo para funciones que no devuelven ningun valor, void de cualquier data.
+const doNothing = ():void => {
+    console.log("anything")
+    // return // ! no se puede usar porque el tipo void no espera return, de igual manera que si hubiera algun tipo especificado, la funcion espera un return
+};
+
+// el tipo never nunca va a devolver un error, por lo que tampoco espera un return
+const makeError = (msg:string = "Impossible to reach" ):never => {
+    throw new Error(msg);
+};
+
+
+
+/*
+//? algo de practica
+escribe una funcion llamada "twoFer" que acepte el nombre de una persona, debe devolver una string en el formato "one for -name-, one for me", el default debe ser "you".
+
+escribe una funcion llamada "isLeapYear()"" que acepte un año y devuelve true o false depende si es un leapyear o no
+leapyear es multiple de 4 y NO de 100 o es multiple de 400
+*/
+const twoFer = (name: string = "you"): string => {
+    return `one for ${name}, one for you;`
+};
+
+
+const isLeapYear = (year: number): boolean => {
+    return (year % 4 === 0 && year % 100 !== 100) || year % 400 === 0 
+};
