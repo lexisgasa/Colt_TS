@@ -1,0 +1,43 @@
+// a las funciones tambien se le pueden poner los parametros en los argumentos, utilizar un metodo de otro tipo de dato o cambiar el tipo de data dara error
+function square(num: number){
+    return num * num;
+};
+
+function greet(person: string){
+    return `Hi there, ${person}!`
+};
+
+// con 3 argumentos, si solo se pasa 1 o 2 dara error de que falta uno, indica que tipo de parametros es el que falta, o de haber cambiado el tipo de dato indica cual seria
+const doSomething = (person: string, age: number, isFunny: boolean) => {};
+
+
+
+square(3);
+// greet(true) da error, espera un string
+doSomething("ChickenFace", 15, true) // así es correcto, de faltar un parametro lo indicaria, o de utilizar otro tipo de dato daría error
+
+
+
+
+// parametros por defecto van igual que en una funcion normal
+
+function saySomething (message: string = "Hey", person: string = "you") {
+    return `${message}, ${person}!`
+}
+
+
+// funcion espera de vuelta un tipo de data de tipo number especificado despues de los parentersis
+const addNumbers = (x: number, y: number): number => x + y;
+
+
+// tambien puede devolver más de un tipo, si math.random es mas pequeño que 0.5 devuelve el numero del parametro como string, sino devuelvelo normal - si no se especifica de tipo string o number dara error.
+function rando (num:number):number | string {
+    if(Math.random() < 0.5) {
+        return num.toString();
+    }
+    return num;
+}
+
+
+// funciona en arrow functions igual
+const add = (x: number, y: number): number => x + y;
