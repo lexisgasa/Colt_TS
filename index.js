@@ -23,3 +23,22 @@ numbers.forEach( val => {
     }
 })
 console.log(current)
+
+numbers.forEach(val => {
+    if(val % 2 === 0) {
+        console.log(`${val} es numero par`)
+    } else {
+        console.log(`${val} es un numero IMPAR`)
+    }
+})
+
+let max = (x, y, z) => {
+    if ( x > y && x > z){
+        console.log(x)
+    } else if (y > x && y > z) {
+        console.log(y)
+    } else {
+        console.log(z)
+    }
+}
+max(1,8,16)
