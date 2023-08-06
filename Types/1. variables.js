@@ -1,21 +1,22 @@
+"use strict";
 // Type annotation
 // strings
-var movieTitle = "The Illusionist";
+let movieTitle = "The Illusionist";
 movieTitle = "Interstellar";
 // movieTitle = 4 // ? gives error since typescript expects a string
 // numbers
-var successValue = 60;
+let successValue = 60;
 successValue = 50;
 // booleans
-var gameOver = false;
+let gameOver = false;
 gameOver = true;
 // const
-var awesomeString = "I'm awesome!";
+const awesomeString = "I'm awesome!";
 // awesomeString = "Not awesome anymore"; // ? gives error
 // Type Inference
-var tvShow = "Famiy Guy";
+let tvShow = "Famiy Guy";
 // tvShow = 4 // ? gives error since TS expects a string, automatically assigned in variable declaration
-// Any type
-var thing = "Hello";
+// the "any" type
+let thing = "Hello";
 thing = 1;
 thing = false;
