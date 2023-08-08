@@ -64,4 +64,15 @@ const mixedStuff: (number | string)[] = [1,2, "asd"] //boolean dara error
 
 
 
+// los literal types especifican el valor de la variable
+let mood: "Happy" | "Sad";
+mood = "Happy";
+// mood = "happy" // ! error por el case sensitive
+// mood = "Bored" // ! error porque no es una opcion posible
+
+type DayOfWeek = "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday" | "Sunday";
+
+let today: DayOfWeek;
+today = "Monday";
+// today = "tuesday" // ! error because of case sensitive
 
