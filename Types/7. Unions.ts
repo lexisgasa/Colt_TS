@@ -47,3 +47,21 @@ function optimisedTax(price: number | string, tax: number): number{
 
     return price * tax;
 };
+
+// un array de tipo any puede tener cualquier tipo de data 
+const stuff: any[] = [1,2, true, "asd", {x: 1, y:"hey"}];
+
+// de nuevo, esta es la manera de decir que contiene UN tipo en especifico
+const nums: number[] = [1,2,3,4,5];
+
+// esta es la manera de indicar que la variable va a contener un array que sera de un tipo, o de otro en concreto
+let chooseOne: string[] | number[] = [1,2,3];
+chooseOne = ["asd","f33"];
+// chooseOne = [1,2,3,"hello"] //! error ya que es una mezcla de diferentes tipos de datos en UN array
+
+// esta es la manera de indicar que el array va a contener diferentes tipos de datos
+const mixedStuff: (number | string)[] = [1,2, "asd"] //boolean dara error
+
+
+
+
