@@ -41,6 +41,7 @@ const products = [
 ];
 // y el console.log da el return total, que en este caso es 10
 console.log(getTotal(products));
+// con un loop en vez de un map
 function getTotalLoop(products) {
     let total = 0;
     for (let product of products) {

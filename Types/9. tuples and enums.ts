@@ -34,3 +34,15 @@ enum OrderStatus {
     DELIVERED,
     RETURNED
 };
+
+// tambien puede tener valores de strings
+enum ArrowKeys {
+    UP = "up",
+    DOWN = "down",
+    LEFT = "left",
+    RIGHT = "right"
+};
+
+console.log(ArrowKeys) // objeto con keys y valores
+console.log(ArrowKeys.DOWN) // solo "down"
+console.log(ArrowKeys["UP"]) // tambien funciona el bracket notation como un objeto normal
