@@ -28,11 +28,29 @@ interface Person {
     readonly id: number,
     first: string,
     last: string,
-    nickname?: string;
+    nickname?: string,
+    sayHi: () => string // ! un metodo -funcion () =>- que devuelve una string
+    //sayHi(): string //! otra manera de escribirlo
 };
 
 const thomas: Person = {
     id: 289134, //! id NO SE PUEDE CAMBIAR, NICKNAME no está porque es opcional
     first: "Thomas",
-    last: "Hardy"
+    last: "Hardy",
+    sayHi: () => "hello!",
+}
+
+
+interface Product1 {
+    name: string,
+    price: number,
+    applyDiscount(discount: number): number; //! este metodo pide UN parametro, que tendra que ser de tipo number, y devolvera RETURN algo tipo number
+};
+
+const shoes: Product1 = {
+    name: "Blue suede shoes",
+    price: 100,
+    applyDiscount(tax: number) {
+        return this.price * tax;
+    }
 }
