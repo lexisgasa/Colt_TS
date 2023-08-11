@@ -90,3 +90,4 @@ const elton: ServiceDog = {
     id: 2940410,
     job: "bomb detector"
 };
+
