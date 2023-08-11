@@ -54,3 +54,39 @@ const shoes: Product1 = {
         return this.price * tax;
     }
 }
+
+// las interfaces pueden abrirse en cualquier parte del script para añadir propiedades nuevas
+interface Dog {
+    name: string,
+    age: number
+};
+// aqui volvemos a abrir la misma interfaz para añadir otras propiedades
+interface Dog {
+    breed: string,
+    bark(): string
+};
+
+
+const titan: Dog = {
+    name: "Titan",
+    age: 1,
+    breed: "Terrier",
+    // bark () {return "bark"}, //! las dos maneras son correctas
+    bark: () => "bark"
+};
+
+// tambien se puede crear una interfaz que herede todas las propiedades de otras interfaces
+
+interface ServiceDog extends Dog {
+    readonly id: number,
+    job: "drug sniffing" | "bomb detector" | "guide"
+}
+
+const elton: ServiceDog = {
+    name: "Elton",
+    age: 1,
+    breed: "Collie",
+    bark: () => "bark bark",
+    id: 2940410,
+    job: "bomb detector"
+};
