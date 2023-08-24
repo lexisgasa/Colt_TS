@@ -8,6 +8,7 @@
     <style>
         body {
             background-color: black;
+            color: white;
             width: 100vw;
             height: 30vh;
             display: flex;
@@ -21,22 +22,36 @@
             font-size: 3rem;
             font-weight: 100;
         }
+        form {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5vh;
+        }
         button {
             background-color: rebeccapurple;
             color: white;
-            font-size: 2rem;
+            font-size: 1.5rem;
             border: 1px solid cyan;
-            width: 30%;
-            height: 30%;
+            padding: 10px 20px;
         }
         button:hover {
             cursor: pointer;
+            transform: scale(1.1);
+            color: yellow;
+            box-shadow: yellow 3px 2px 5px;
         }
+        
     </style>
 </head>
 <body>
     <h1>ToDo app</h1>
-    <input id="todoInput" type="text" placeholder="enter a todo">
-    <button id="btn">Click me!</button>
+    <form id="todoForm">
+        <input id="todoInput" type="text" placeholder="enter a todo">
+        <button id="btn">Click me!</button>
+        <ul id="todoList">
+        </ul>
+    </form>
 </body>
 </html>
