@@ -11,19 +11,32 @@ let mistery3 = "eps"; // ! know is just unknown type
 let numChars = mistery3.length; //! eventho mistery3 is still unknown and will be for the whole document, just in this case evaluate as a string
 const input = document.querySelector("#todoInput"); //! is essential to use as HTMLInputElement since typescrip will know it will be an element not specifcally which kind of element, so the property value won't exist there, since it's needed later it will be needed to specify that is an html INPUT element
 // ============ to do list ============
+// lineas 21,22 cogemos la form y el elemento <ul> donde añadir los <li>.
+// creamos una interface (forma de objeto) en la linea 26 que requiere un texto string y un completed boleano 
+// en la linea 32 simplemente se crea todos que sera un array, pero un array que contendra objetos del tipo Todo
+// en la linea 35 hay una funcion que se activara cuando se haga click en la form, previene el refresh de la pagina automatica, crea un objeto nuevo newTodo que coge el valor del value y por default su completed sera falso, y llama a la funcion para crear un nuevo elemento de la linea 50, finalmente con ese elemento creado lo pushea al array de la linea 33 y resetea el valor del input
+// la funcion que llama la linea 44 se declara en la 51, creara el elemento li que añadira, el input que se le establece que sera de tipo checkbox, como en la linea 44 el paramatro que se espera sera el recien creado en la 40, newTodo, se puede acceder a su propiedad text que ya sera el value, por lo tanto indicamos que el parametro de esta nueva funcion.text ya sera el value por si, metemos el input al elemento recien creado, y el objeto este al elemento li.
 const form = document.querySelector("#todoForm");
 const list = document.querySelector("ul");
+const todos = [];
 const handleEvent = (e) => {
     e.preventDefault();
-    console.log("submitted");
-    // ! e will be any type by default but it can be specified that it will be an Event of the DOM
-    const newTodoText = input.value;
-    const newLI = document.createElement("li"); // ! newLi knows it will be already an HTMLLIElement
+    // ! e de default va a ser del tipo any pero lo ideal seria especificar que es del tipo Event del DOM
+    const newTodo = {
+        text: input.value,
+        completed: false
+    };
+    createNewElement(newTodo);
+    todos.push(newTodo);
+    // ! hacemos un objeto tipo Todo que el texto sera la string del input y el complete será falso inicialmente, y hacemos un push a todos que es un array que puede contener strings del tipo Todo, es decir el resultado final sera un array con objetos anidados
+    input.value = "";
+};
+const createNewElement = (todo) => {
+    const newLI = document.createElement("li"); // ! typescript en la variable newLI ya sabes que va a ser del tipo HTMLLIElement porque es el objeto creado
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    newLI.append(newTodoText);
+    newLI.append(todo.text);
     newLI.append(checkbox);
     list === null || list === void 0 ? void 0 : list.append(newLI);
-    input.value = "";
 };
 form === null || form === void 0 ? void 0 : form.addEventListener("submit", handleEvent);
