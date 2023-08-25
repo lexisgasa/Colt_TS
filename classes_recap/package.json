@@ -1,0 +1,16 @@
+{
+  "name": "classes_recap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"tsc -w\" \"lite-server\" "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.1",
+    "lite-server": "^2.6.1"
+  }
+}
