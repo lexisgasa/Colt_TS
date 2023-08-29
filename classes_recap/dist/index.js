@@ -31,10 +31,11 @@ class Player {
         return `${this.name} ${this.lastName}`
    };
     set changeName(newName) {
+        if ( typeof newName !== "string" ) throw new Error("New value must be a string!")
         const [first, last, secondLast] = newName.split(" ");
-        if (typeof secondLast === "string") this.secondLastName = secondLast;
         this.name = first;
         this.lastName = last;
+        secondLast ? this.secondLastName = secondLast : this.secondLastName = undefined;
    };
 }
 
