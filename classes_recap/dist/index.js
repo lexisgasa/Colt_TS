@@ -51,3 +51,7 @@ class Admin extends Player {
 
 const player1 = new Player("Alex", "Garcia");
 const admin = new Admin();
+
+
+
+
