@@ -39,7 +39,15 @@ class Player {
    };
 
    //! las propiedades que van con la palabra static no se heredaran a ninguna instancia, solo se podran acceder a ellas a traves de la clase per se, description solo se podra acceder a traves de Player y no de player1
-   static description = "A player in the game"
+   static description = "A player in the game" 
+
+}
+
+
+class Admin extends Player {
+        isAdmin = true;
+
 }
 
 const player1 = new Player("Alex", "Garcia");
+const admin = new Admin();
