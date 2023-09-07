@@ -1,3 +1,6 @@
+// ========================================================================
+// ===============            VERSION LARGA            ====================
+// ========================================================================
 class Player {
     // ! con las propiedades readonly, una vez se cree una instancia esas propiedades no van a ser modificables
     // ! los parametros que se van a usar en el constructor se tienen que crear primero o dara error
@@ -18,3 +21,13 @@ const elton = new Player("Elton", "Steele");
 elton.name = "Andrew" //! complain if changed since its a readonly property
 elton.lastName = "Iron"  //! lastname will be iron
 */
+
+
+
+
+// ========================================================================
+// ===============            VERSION CORTA            ====================
+// ========================================================================
+
+
+
