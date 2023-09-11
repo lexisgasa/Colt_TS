@@ -60,3 +60,30 @@ class Bike {
 }
 ;
 const kawasaki = new Bike("green", "Kawasaki");
+// las abstract clases son como las intefaces en el sentido en el que las instancias deben contener las propiedades abstractas, con la diferencia de que tambien van a poder incluir metodos que SI van a hereditar las instancias.
+class Employee {
+    constructor(first, last) {
+        this.first = first;
+        this.last = last;
+    }
+    greet() {
+        console.log(`Hello, I'm ${this.first} ${this.last}`);
+    }
+}
+;
+// si no se incluyen las clases con las propiedades abstractas TypeScript se quejara
+class FullTimeEmployee extends Employee {
+    constructor(first, last, salary) {
+        super(first, last);
+        this.salary = salary;
+    }
+    ;
+    getPay() {
+        console.log(`${this.salary}€`);
+    }
+}
+;
+// el metodo greet ya esta heredado, por lo que aunque no especificado en fulltimeemployee, sigue funcionando. Sin embargo el metodo getPay DEBE declararse, ya que en una abstracción (no existe per se en la clase padre pero fuerza a las hijas a tenerlas)
+const alexis = new FullTimeEmployee("Alexis", "Garcia", 1500);
+alexis.greet();
+alexis.getPay();
