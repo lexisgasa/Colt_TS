@@ -18,6 +18,7 @@ elton.lastName = "Iron"  //! lastname sera Iron, aunque .lastName no sera una su
 // ===============            VERSION CORTA            ====================
 // ========================================================================
 // para hacerlo corto no hace falta declarar los paramatros que se van a usar y su funcion en el constructor, declarado unicamente como parametro del constructor, de manera implicita los declarara automaticamente cuando se haga la nueva instancia. // ? el orden de los parametros coincide, ergo en este caso lo primero que se escriba sera el name y lo segundo el last
+// si fuese una propiedad private como en la linea 11, solo se podría acceder a esa propiedad dentro de la misma clase y ni las clases hijas que vienen pueden hereditar, con la palabra protected las clases hijas pueden hereditar pero sigue sin ser publica.
 class Opponent {
     constructor(name, last) {
         this.name = name;
@@ -32,8 +33,30 @@ class Opponent {
         this.name = change;
     }
 }
+class masterVillain extends Opponent {
+    constructor() {
+        super(...arguments);
+        this.isAdmin = true;
+    }
+    maxScore() {
+        this.score = 9999;
+    }
+}
 const opponent = new Opponent("Alexis", "Garcia");
 console.log(opponent);
 console.log(opponent.fullName);
 opponent.fullName = "Hikaru";
 console.log(opponent.fullName);
+;
+;
+class Bike {
+    constructor(color, brand) {
+        this.color = color;
+        this.brand = brand;
+    }
+    print() {
+        console.log(`Building a ${this.brand} with ${this.color} color…`);
+    }
+}
+;
+const kawasaki = new Bike("green", "Kawasaki");
